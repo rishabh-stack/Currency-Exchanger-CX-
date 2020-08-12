@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Currency Exchanger</title>
+</head>
+<style>
+    footer {
+        padding: 10px 0;
+        background-color: #101010;
+        color: #9d9d9d;
+        bottom: 0;
+        width: 100%;
+        color: white;
+        margin-top: 40px;
+        position: fixed;
+        left: 0;
+    }
+</style>
+
+<body>
+
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1"><h1>Currency Exchanger(CX)</h1></span>
+    </nav>
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Hello user!</strong> Here you can exchange your currency from rupees to any others...
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="card" style="width: 40rem; margin-left: 400px;">
+        <h1 style="text-align: center;">CX</h1>
+        <div class="card-body">
+            <h5 class="card-title">Exchange Here</h5>
+            <p class="card-text">
+                <form method="post" action="/result/">{% csrf_token %}
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Enter Amount in Rupees</label>
+                        <input type="text" class="form-control" id="Amount" name="Amount" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="currency">Example select</label>
+                        <select class="form-control" id="Currency" name="Currency">
+<option>Argentine Peso    </option>
+<option>Australian Dollar</option>
+<option>Bahraini Dinar</option>
+<option>Botswana Pula</option>
+<option>Brazilian Real</option>
+<option>British Pound</option>
+<option>Bruneian Dollar</option>
+<option>Bulgarian Lev</option>
+<option>Canadian Dollar</option>
+<option>Chilean Peso</option>
+<option>Chinese Yuan Renmi</option>nbi
+<option>Colombian Peso</option>
+<option>Croatian Kuna</option>
+<option>Czech Koruna</option>
+<option>Danish Krone</option>
+<option>Emirati Dirham</option>
+<option>Euro</option>
+<option>Hong Kong Dollar</option>
+<option>Hungarian Forint</option>
+<option>Icelandic Krona</option>
+<option>Indonesian Rupiah</option>
+<option>Iranian Rial</option>
+<option>Israeli Shekel</option>
+<option>Japanese Yen</option>
+<option>Kazakhstani Tenge</option>
+<option>Kuwaiti Dinar</option>
+<option>Libyan Dinar</option>
+<option>Malaysian Ringgit</option>
+<option>Mauritian Rupee</option>
+<option>Mexican Peso</option>
+<option>Nepalese Rupee</option>
+<option>New Zealand Dollar</option>
+<option>Norwegian Krone</option>
+<option>Omani Rial</option>
+<option>Pakistani Rupee</option>
+<option>Philippine Peso</option>
+<option>Polish Zloty</option>
+<option>Qatari Riyal</option>
+<option>Romanian New Leu</option>
+<option>Russian Ruble</option>
+<option>Saudi Arabian Riya</option>
+<option>Singapore Dollar</option>
+<option>South African Rand</option>
+<option>South Korean Won</option>
+<option>Sri Lankan Rupee</option>
+<option>Swedish Krona</option>
+<option>Swiss Franc</option>
+<option>Taiwan New Dollar</option>
+<option>Thai Baht</option>
+<option>Trinidadian Dollar</option>
+<option>Turkish Lira</option>
+<option>US Dollar</option>
+<option>Venezuelan Bolivar</option>
+                      </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Exchange</button>
+
+                </form>
+            </p>
+        </div>
+    </div><br> {% for message in messages %}
+    <div style="text-align: center; " class="alert alert-warning alert-dismissible fade show" role="alert">{{messages.tags}}
+        <strong>{{message}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    {% endfor%}
+
+    <footer>
+        <center> Copyright &copy <a href="#" style="color:orangered; text-decoration: none;">Currency Exchanger</a>. All Rights Reserved and Contact Us: +91 9520313045</center>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+
+</html>
